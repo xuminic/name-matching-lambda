@@ -2,7 +2,7 @@
 # Welcome to the OpenAI API Demostration Project
 
 This is a demostration project for implementing the OpenAI API with TypeScript in AWS lambda function.
-The lambda function and other assets would be deploied with AWS CDK.
+The lambda function and other assets would be deployed with AWS CDK.
 
 ## Build and test the program locally
 
@@ -26,7 +26,7 @@ The Node packages would be regenerated automatically when building the program.
 
 ## Deploy the lambda function to AWS
 
-Using the following command to install the required Node packages, build and test the program in local environment.
+Using the following command to deploy the lambda function and the API Gateway to AWS cloud.
 
 Edit the lib/name-matching-lambda-stack.ts file. Replace the `your-actual-API-key` in this line
 ```
@@ -38,9 +38,7 @@ make
 make deploy
 ```
 
-## Test the lambda function in AWS
-
-After the successful deploy, there should be an URL to access API Gateway like this
+After a successful deploy, there should be an URL to access, like this
 ```
 https://z2uhy4dpy6.execute-api.ap-southeast-2.amazonaws.com/prod/
 ```
@@ -50,9 +48,9 @@ You may using curl to do the test:
 curl -X GET "https://z2uhy4dpy6.execute-api.ap-southeast-2.amazonaws.com/prod/items?name=huawen"
 ```
 
-## Destroy and clean up the deploied resources in AWS
+## Destroy and clean up the deployed resources in AWS
 
-The lambda function and other resources can be easily deleted and cleaned with
+The lambda function and other resources can be easily deleted and cleaned by
 ```
 make destroy
 ```
