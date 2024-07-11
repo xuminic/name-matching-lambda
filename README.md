@@ -6,6 +6,7 @@ The lambda function and other assets would be deployed with AWS CDK.
 
 ## Build and test the program locally
 
+This project requires Node v16 and higher.
 Using the following command to install the required Node packages, build and test the program in local environment.
 ```
 make
