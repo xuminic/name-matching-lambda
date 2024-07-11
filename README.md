@@ -15,23 +15,23 @@ Using the following command to install the required Node packages, build and tes
 ## Clean up the the program locally
 
 You may using
-'''
+```
 make clean
-'''
+```
 to delete the compiled javascript files, or using
-'''
+```
 make dist-clean
-'''
+```
 to delete every generated files and Node pacakges. 
 
 ## Deploy the lambda function to AWS
 
 Using the following command to install the required Node packages, build and test the program in local environment.
 
-Edit the lib/name-matching-lambda-stack.ts file. Replace the 'your-actual-API-key' in this line
-'''
+Edit the lib/name-matching-lambda-stack.ts file. Replace the `your-actual-API-key` in this line
+```
 OPENAI_API_KEY: 'your-actual-API-key',
-'''
+```
 with the actual API key or with the Secrets Manager for Secure Storage. Then
 
 * make
@@ -40,14 +40,14 @@ with the actual API key or with the Secrets Manager for Secure Storage. Then
 ## Test the lambda function in AWS
 
 After the successful deploy, there should be an URL to access API Gateway like this
-'''
+```
 https://z2uhy4dpy6.execute-api.ap-southeast-2.amazonaws.com/prod/
-'''
+```
 
 You may using curl to do the test:
-'''
+```
 curl -X GET "https://z2uhy4dpy6.execute-api.ap-southeast-2.amazonaws.com/prod/items?name=huawen"
-'''
+```
 
 ## Destroy and clean up the deploied resources in AWS
 
