@@ -1,28 +1,28 @@
 
-# Welcome to the OpenAI API Testing project
+# Welcome to the OpenAI API Demostration Project
 
-This is a demostration project for implementing the OpenAI API in AWS lambda.
+This is a demostration project for implementing the OpenAI API with TypeScript in AWS lambda function.
 The lambda function and other assets would be deploied with AWS CDK.
 
 ## Build and test the program locally
 
 Using the following command to install the required Node packages, build and test the program in local environment.
-
-* make
-* export OPENAI_API_KEY=your-openai-api-key
-* node lambda/namematching.js wenhua
-
+```
+make
+export OPENAI_API_KEY=your-openai-api-key
+node lambda/namematching.js wenhua
+```
 ## Clean up the the program locally
 
-You may using
+You may delete the compiled files and clean up the target directory by 
 ```
 make clean
 ```
-to delete the compiled javascript files, or using
+or delete every generated files and the Node pacakges by
 ```
 make dist-clean
 ```
-to delete every generated files and Node pacakges. 
+The Node packages would be regenerated automatically when building the program.
 
 ## Deploy the lambda function to AWS
 
@@ -33,9 +33,10 @@ Edit the lib/name-matching-lambda-stack.ts file. Replace the `your-actual-API-ke
 OPENAI_API_KEY: 'your-actual-API-key',
 ```
 with the actual API key or with the Secrets Manager for Secure Storage. Then
-
-* make
-* make deploy
+```
+make
+make deploy
+```
 
 ## Test the lambda function in AWS
 
@@ -52,9 +53,9 @@ curl -X GET "https://z2uhy4dpy6.execute-api.ap-southeast-2.amazonaws.com/prod/it
 ## Destroy and clean up the deploied resources in AWS
 
 The lambda function and other resources can be easily deleted and cleaned with
-
-* make destroy
-
+```
+make destroy
+```
 
 ## Useful commands
 

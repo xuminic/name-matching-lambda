@@ -10,6 +10,7 @@ clean:
 
 dist-clean: clean
 	make -C lambda dist-clean
+	rm -rf node_modules
 
 deploy:
 	cdk bootstrap
