@@ -74,11 +74,19 @@ async function findClosestMatch(inputName: string): Promise<string> {
     //console.log('Potential Matches:', potentialMatches);
     
     /* here is the prompt to OpenAI */
-    const prompt = `
+    /*const prompt = `
     Here is a list of potential names:
     ${potentialMatches.join('\n')}
 
     Find the closest match for the input name: "${inputName}"
+    Return the matching name exactly as it appears in the list.
+    `;*/
+
+    const prompt = `
+    Here is a list of potential names:
+    ${potentialMatches.join('\n')}
+
+    Find a female name likely matching for the input name: "${inputName}"
     Return the matching name exactly as it appears in the list.
     `;
 
@@ -133,7 +141,7 @@ export const handler = async (event: APIGatewayEvent, context: Context, callback
 
 
 /* the local test interface, try this:
-*     node lambda/namematching.js wenhua
+*     node lambda/namematching.js wen
 */
 if (require.main === module) {
     const inputName = process.argv[2];
